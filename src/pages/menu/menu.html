@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Naše nabídka</ion-title>
+    <button (click)="reserve()">Rezervace</button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-tabs>
+    <ion-tab [root]="tab1Root" tabTitle="Jídelní menu" tabIcon="pulse"></ion-tab>
+    <ion-tab [root]="tab2Root" tabTitle="Polední menu" tabIcon="chatbubbles"></ion-tab>
+    <ion-tab [root]="tab3Root" tabTitle="Vinný lístek" tabIcon="wine"></ion-tab>
+    <ion-tab [root]="tab4Root" tabTitle="Nápoje" tabIcon="beer"></ion-tab>
+  </ion-tabs>
+</ion-content>

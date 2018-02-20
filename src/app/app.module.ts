@@ -2,9 +2,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
+
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import { MenuPage } from '../pages/menu/menu';
+import { ProgramPage } from '../pages/program/program';
+import { AboutPage } from '../pages/about/about';
+import { GalleryPage } from '../pages/gallery/gallery';
+import { FoodPage } from '../pages/food/food';
+import { LunchPage } from '../pages/lunch/lunch';
+import { WinePage } from '../pages/wine/wine';
+import { BeveragesPage } from '../pages/beverages/beverages';
+import { ReservationPage } from '../pages/reservation/reservation'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -13,7 +22,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    MenuPage,
+    ProgramPage,
+    AboutPage,
+    GalleryPage,
+    FoodPage,
+    LunchPage,
+    WinePage,
+    BeveragesPage,
+    ReservationPage
   ],
   imports: [
     BrowserModule,
@@ -23,7 +40,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    MenuPage,
+    ProgramPage,
+    AboutPage,
+    GalleryPage,
+    FoodPage,
+    LunchPage,
+    WinePage,
+    BeveragesPage,
+    ReservationPage
   ],
   providers: [
     StatusBar,
