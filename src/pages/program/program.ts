@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Storage} from '@ionic/storage';
 
 /**
  * Generated class for the ProgramPage page.
@@ -15,11 +16,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ProgramPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  private program: any;
+
+  constructor(public storage: Storage, public navCtrl: NavController, public navParams: NavParams) {
+    this.loadContent();
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProgramPage');
   }
 
+  loadContent(){
+    this.storage.get('program').then((val) => {
+      this.program = val['0'];
+    });
+  }
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Storage} from '@ionic/storage';
 
 /**
  * Generated class for the BeveragesPage page.
@@ -15,11 +16,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class BeveragesPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  private beverages: any;
+  private beveragesText: any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage) {
+    this.loadMenu()
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad BeveragesPage');
   }
 
+  loadMenu() {
+    this.storage.get('menu').then((val) => {
+      this.beverages = val[0][3];
+      this.beveragesText = this.beverages.text;
+    });
+  }
 }

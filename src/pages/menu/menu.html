@@ -1,15 +1,13 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
+    <button ion-button menuToggle class="toggleMenuBtn">
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Naše nabídka</ion-title>
-    <button (click)="reserve()">Rezervace</button>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-
   <ion-tabs>
     <ion-tab [root]="tab1Root" tabTitle="Jídelní menu" tabIcon="pulse"></ion-tab>
     <ion-tab [root]="tab2Root" tabTitle="Polední menu" tabIcon="chatbubbles"></ion-tab>

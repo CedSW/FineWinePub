@@ -13,10 +13,21 @@ import { FoodPage } from '../pages/food/food';
 import { LunchPage } from '../pages/lunch/lunch';
 import { WinePage } from '../pages/wine/wine';
 import { BeveragesPage } from '../pages/beverages/beverages';
-import { ReservationPage } from '../pages/reservation/reservation'
+import { ReservationPage } from '../pages/reservation/reservation';
+import { ReviewPage } from '../pages/review/review';
+import { ContactPage } from '../pages/contact/contact';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ApiProvider } from '../providers/api/api';
+import { HttpModule } from '@angular/http';
+import { IonicStorageModule } from '@ionic/storage';
+import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer';
+import { File } from '@ionic-native/file';
+import * as ionicGalleryModal from 'ionic-gallery-modal';
+import { HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+
+
 
 @NgModule({
   declarations: [
@@ -30,11 +41,18 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     LunchPage,
     WinePage,
     BeveragesPage,
-    ReservationPage
+    ReservationPage,
+    ReviewPage,
+    ContactPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+      HttpModule,
+    ionicGalleryModal.GalleryModalModule,
+    IonicStorageModule.forRoot(),
+    IonicModule.forRoot(MyApp, {
+      menuType: 'overlay'
+    }),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -48,12 +66,21 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     LunchPage,
     WinePage,
     BeveragesPage,
-    ReservationPage
+    ReservationPage,
+    ReviewPage,
+    ContactPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    {provide: HAMMER_GESTURE_CONFIG,
+      useClass: ionicGalleryModal.GalleryModalHammerConfig},
+    ApiProvider,
+    FileTransfer,
+    FileTransferObject,
+    File,
+
   ]
 })
 export class AppModule {}

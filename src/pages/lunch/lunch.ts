@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import {Storage} from '@ionic/storage';
 /**
  * Generated class for the LunchPage page.
  *
@@ -15,11 +15,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class LunchPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  private lunch: any;
+  private lunchText: any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage) {
+    this.loadMenu();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LunchPage');
   }
 
+  loadMenu() {
+    this.storage.get('menu').then((val) => {
+      this.lunch = val[0][1];
+      this.lunchText = this.lunch.text;
+    });
+  }
 }

@@ -5,7 +5,8 @@ import { LunchPage } from '../lunch/lunch';
 import { WinePage } from '../wine/wine';
 import { BeveragesPage } from '../beverages/beverages';
 import { ModalController } from 'ionic-angular';
-import { ReservationPage } from '../reservation/reservation'
+import { ReservationPage } from '../reservation/reservation';
+import {Storage} from '@ionic/storage';
 /**
  * Generated class for the MenuPage page.
  *
@@ -25,12 +26,22 @@ export class MenuPage {
   tab3Root: any = WinePage;
   tab4Root: any = BeveragesPage;
 
+  private menu: any;
 
-  constructor(public modalController: ModalController, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public modalController: ModalController, public navCtrl: NavController, public navParams: NavParams, public storage: Storage) {
+
+    this.loadMenu();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MenuPage');
+  }
+
+  loadMenu() {
+    this.storage.get('menu').then((val) => {
+      this.menu = val;
+      console.log(this.menu);
+    });
   }
 
   reserve(){

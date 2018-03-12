@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import {Storage} from '@ionic/storage';
 /**
  * Generated class for the WinePage page.
  *
@@ -15,11 +15,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class WinePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  private wine: any;
+  private wineText: any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage) {
+    this.loadMenu();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad WinePage');
   }
 
+  loadMenu() {
+    this.storage.get('menu').then((val) => {
+      this.wine = val[0][2];
+      this.wineText = this.wine.text;
+    });
+  }
 }

@@ -1,13 +1,15 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
+    <button ion-button menuToggle class="toggleMenuBtn">
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>O nás</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-
-
+<ion-content>
+  <ion-tabs>
+    <ion-tab [root]="tab1Root" tabTitle="Kontakty" tabIcon="call"></ion-tab>
+    <ion-tab [root]="tab2Root" tabTitle="Recenze" tabIcon="list"></ion-tab>
+  </ion-tabs>
 </ion-content>

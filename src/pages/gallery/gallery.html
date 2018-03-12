@@ -1,13 +1,19 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Galerie</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <button ion-button menuToggle class="toggleMenuBtn">
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Galerie</ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-
-
+    <div class="galleryWrapper" *ngFor="let album of gallery; let i = index;">
+        <div class="galleryTitle">
+            <ion-title>{{album.title}}</ion-title>
+        </div>
+        <div class="galleryImg" *ngFor="let url of gallery[i].images">
+            <img  src="{{localPath}}{{url.image}}"  (click)="showLoading(url.id)"/>
+        </div>
+    </div>
 </ion-content>

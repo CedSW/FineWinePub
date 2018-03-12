@@ -1,0 +1,23 @@
+page-contact {
+  ion-content{
+    span{
+      display: none;
+    }
+    div > div > div{
+      display: none;
+    }
+    div > div > p > script{
+      display: none;
+    }
+  }
+  .content-md{
+    background-color: transparent;
+    color: white;
+  }
+
+  .content-ios{
+    background-color: transparent;
+    color: white;
+  }
+
+}

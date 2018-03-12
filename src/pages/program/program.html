@@ -1,13 +1,43 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Program</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <button ion-button menuToggle class="toggleMenuBtn">
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Program</ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-
-
+    <ng-container *ngFor="let event of program; let i = index">
+    <div *ngIf="i%2 === 0" class="event">
+        <div class="date">
+            <div class="top">
+                <p>{{event.date1}}</p>
+            </div>
+            <div>
+                <p>{{event.date2}}</p>
+            </div>
+        </div>
+        <div class="info">
+            <div class="title">{{event.title}}</div>
+            <hr>
+            <div class="perex" [innerHtml]="event.text"></div>
+        </div>
+    </div>
+        <div *ngIf="i%2 === 1" class="eventodd">
+            <div class="date">
+                <div class="top">
+                    <p>{{event.date1}}</p>
+                </div>
+                <div>
+                    <p>{{event.date2}}</p>
+                </div>
+            </div>
+            <div class="info">
+                <div class="title">{{event.title}}</div>
+                <hr>
+                <div class="perex" [innerHtml]="event.text"></div>
+            </div>
+        </div>
+    </ng-container>
 </ion-content>

@@ -1,3 +1,65 @@
 page-home {
+  .logo{
+    width: 60%;
+    display: block;
+    margin: auto;
+  }
+  .mainAbout{
+    margin-top: 30px;
+    margin-bottom: 30px;
+      color: white;
+      text-align: center;
+  }
 
+  .event{
+    width: 100%;
+    height: 80px;
+    margin-bottom: 40px;
+    .date{
+      height: 100%;
+      width: 80px;
+      background-color:#a81b1e;
+      outline: 1px solid #a81b1e;
+      outline-offset: 1px;
+      margin-right: 10px;
+      float: left;
+      .top{
+        border-bottom: 1px dashed rgba(211, 211, 211, 0.4);
+        p{
+          position: relative;
+          top: 13px;
+        }
+
+      }
+      div{
+        width: 80%;
+        height: 50%;
+        display: block;
+        margin: auto;
+        color: white;
+        text-align: center;
+        padding: 5px;
+        p{
+          margin: 0;
+        }
+      }
+    }
+    .info{
+      color: white;
+      width: 100%;
+      .perex{
+        p{
+          margin: 0;
+        }
+      }
+      hr{
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 1px solid white;
+        margin: 5px 0;
+        padding: 0;
+      }
+    }
+  }
 }
