@@ -10,6 +10,8 @@
   <img class="logo" src="assets/img/logoSP.png" alt="logo">
   <div class="mainAbout" [innerHTML]="this.about">
   </div>
+  <ion-title align="center">Nejbližší událost</ion-title>
+  <br>
   <ng-container *ngFor="let event of programHome; let i = index">
     <div *ngIf="i === 0"  class="event">
     <div class="date">

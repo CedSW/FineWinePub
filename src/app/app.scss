@@ -14,24 +14,58 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+ion-app {
+  background: none transparent !important;
+}
+
 ion-content{
   background-image: url("../assets/img/background.jpg");
   background-size: cover;
   ion-content{
     background-image: none;
+
   }
+}
+
+div.nav-decor{
+  background: transparent !important;
+}
+
+.list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block{
+  border-bottom: 2px solid white;
 }
 
 .item-inner{
   background-image: none !important;
 }
 .reserveBtn{
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+  position: relative;
+  margin: 60px auto ;
+  display: block;
+  width: 60%;
   height: 3em;
-  background-color: #41c92d;
+  background-color: black;
+  outline: 1px solid black;
+  outline-offset: 1px;
 }
+.socialWrapper {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  .socialBtn {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    outline: 1px solid white;
+    outline-offset: 1px;
+    margin: 10px;
+    ion-icon {
+      font-size: 25px;
+      color: #a81b1e;
+    }
+  }
+}
+
 
 ion-toolbar > div{
   background-color: #a81b1e !important;
@@ -45,7 +79,7 @@ ion-title > div{
 }
 .toolbar-title-menu > div{
   color: white !important;
-  padding-left: 50px;
+  padding-left: 40px;
 }
 .toolbar-md{
   padding: 11px;
@@ -65,9 +99,14 @@ ion-title > div{
     border-bottom: none !important;
   }
 }
+.menu-inner{
+  outline: 1px solid #a81b1e;
+  outline-offset: 1px;
+}
 
 .main-menu{
   background: #a81b1e !important;
+
   .menu-list{
     margin-left: 50px;
     border-top: 1px solid #ffffff ;

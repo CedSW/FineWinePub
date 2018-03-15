@@ -16,6 +16,8 @@ import { BeveragesPage } from '../pages/beverages/beverages';
 import { ReservationPage } from '../pages/reservation/reservation';
 import { ReviewPage } from '../pages/review/review';
 import { ContactPage } from '../pages/contact/contact';
+import { LoadingPage } from '../pages/loading/loading';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -26,6 +28,7 @@ import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer';
 import { File } from '@ionic-native/file';
 import * as ionicGalleryModal from 'ionic-gallery-modal';
 import { HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+import { FCM } from '@ionic-native/fcm';
 
 
 
@@ -43,7 +46,8 @@ import { HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
     BeveragesPage,
     ReservationPage,
     ReviewPage,
-    ContactPage
+    ContactPage,
+    LoadingPage
   ],
   imports: [
     BrowserModule,
@@ -68,7 +72,8 @@ import { HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
     BeveragesPage,
     ReservationPage,
     ReviewPage,
-    ContactPage
+    ContactPage,
+    LoadingPage
   ],
   providers: [
     StatusBar,
@@ -80,6 +85,7 @@ import { HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
     FileTransfer,
     FileTransferObject,
     File,
+    FCM
 
   ]
 })

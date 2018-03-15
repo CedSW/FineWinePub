@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { FoodPage } from '../food/food';
 import { LunchPage } from '../lunch/lunch';
 import { WinePage } from '../wine/wine';
@@ -14,7 +14,7 @@ import {Storage} from '@ionic/storage';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+
 @Component({
   selector: 'page-menu',
   templateUrl: 'menu.html',

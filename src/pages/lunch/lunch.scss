@@ -16,6 +16,11 @@ page-lunch {
     font-size: 18px;
     text-align: center;
   }
+
+  ion-content > div > div > table{
+    width: 100%;
+  }
+
   ion-content > div > div > table > tbody > tr{
     height: 30px;
   }

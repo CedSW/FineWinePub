@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import {Storage} from '@ionic/storage';
+
 /**
  * Generated class for the ContactPage page.
  *
@@ -8,7 +9,7 @@ import {Storage} from '@ionic/storage';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+
 @Component({
   selector: 'page-contact',
   templateUrl: 'contact.html',
@@ -16,7 +17,7 @@ import {Storage} from '@ionic/storage';
 export class ContactPage {
   private part1: any;
   private part2: any;
-  private contact: any;
+  private email = 'info@senkovnapub.cz </br> ';
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage) {
     this.loadContact();
@@ -28,13 +29,17 @@ export class ContactPage {
 
   loadContact(){
     this.storage.get('contact').then((val) => {
-     this.contact = val;
-     let index = val.indexOf('document');
-     console.log(index);
-     //this.contact = this.contact.toString();
-     //this.contact = this.contact.substr(0, index);
+     let index = val[0].indexOf('<span id');
+     let index2 = val[0].indexOf('<h4>Otevírací doba:</h4>');
+     console.log(index2);
+     console.log(val[0].length);
+     this.part1 = val[0].substr(0,index);
+     this.part2 = val[0].substr(index2, val[0].length);
+     console.log(this.part2);
+     this.part1 += this.email;
+     this.part1 += this.part2;
+      console.log(val[0]);
 
-      console.log(this.contact);
     });
   }
 }

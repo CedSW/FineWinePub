@@ -24,7 +24,7 @@ export class ApiProvider {
     });
     let options = new RequestOptions({
       headers: headers,
-      withCredentials: true,
+      withCredentials: false,
     });
 
     return this.http
@@ -44,7 +44,7 @@ export class ApiProvider {
     });
     let options = new RequestOptions({
       headers: headers,
-      withCredentials: true,
+      withCredentials: false,
     });
 
     return this.http
@@ -66,7 +66,7 @@ export class ApiProvider {
     });
     let options = new RequestOptions({
       headers: headers,
-      withCredentials: true,
+      withCredentials: false,
     });
 
     return this.http
@@ -86,7 +86,7 @@ export class ApiProvider {
     });
     let options = new RequestOptions({
       headers: headers,
-      withCredentials: true,
+      withCredentials: false,
     });
 
     return this.http
@@ -107,7 +107,7 @@ export class ApiProvider {
     });
     let options = new RequestOptions({
       headers: headers,
-      withCredentials: true,
+      withCredentials: false,
     });
 
     return this.http

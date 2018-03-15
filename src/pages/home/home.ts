@@ -22,8 +22,8 @@ export class HomePage {
     loadAbout() {
         this.storage.get('about').then((val) => {
             this.about = val['0'];
-           let index = this.about.indexOf('</p>');
-           this.about = this.about.substr(0,index);
+           // let index = this.about.indexOf('</p>');
+           // this.about = this.about.substr(0,index);
         });
 
     }
